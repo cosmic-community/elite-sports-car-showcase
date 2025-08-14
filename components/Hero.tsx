@@ -6,11 +6,11 @@ export default function Hero() {
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <img 
-          src="https://imgix.cosmicjs.com/8b55d880-a045-11ed-81f2-f50e185dd248-T7K4aEPoGGk.jpg?w=1920&h=1080&fit=crop&auto=format,compress"
-          alt="Luxury Sports Car Showroom"
+          src="https://imgix.cosmicjs.com/1131cfa0-795a-11f0-a051-23c10f41277a-photo-1544636331-e26879cd4d9b-1755208818925.jpg?w=2000&h=1200&fit=crop&auto=format,compress"
+          alt="Luxury Porsche 911 Turbo S Sports Car"
           className="w-full h-full object-cover"
         />
-        <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+        <div className="absolute inset-0 bg-black bg-opacity-40"></div>
       </div>
       
       {/* Content */}
