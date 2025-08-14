@@ -15,16 +15,16 @@ export default function Hero() {
       
       {/* Content */}
       <div className="relative z-10 text-center text-white max-w-4xl mx-auto px-4">
-        <h1 className="text-5xl md:text-7xl font-bold mb-6 animate-fade-in">
+        <h1 className="text-5xl md:text-7xl font-bold mb-6">
           Elite Sports Cars
         </h1>
-        <p className="text-xl md:text-2xl mb-8 opacity-90 animate-slide-up animation-delay-150">
+        <p className="text-xl md:text-2xl mb-8 opacity-90">
           Experience automotive excellence with the world's most prestigious brands
         </p>
-        <div className="flex flex-col sm:flex-row gap-4 justify-center animate-slide-up animation-delay-300">
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link 
             href="/cars"
-            className="bg-luxury-gold hover:bg-yellow-600 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105"
+            className="bg-gray-900 hover:bg-gray-800 text-white px-8 py-4 rounded-lg text-lg font-semibold transition-all duration-300 transform hover:scale-105"
           >
             Explore Collection
           </Link>
