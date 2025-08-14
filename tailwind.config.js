@@ -22,7 +22,7 @@ module.exports = {
           900: '#1e3a8a',
         },
         luxury: {
-          gold: '#d4af37',
+          gold: '#b8941f',
           silver: '#c0c0c0',
           black: '#000000',
         }

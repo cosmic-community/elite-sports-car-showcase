@@ -25,7 +25,7 @@
 
 @layer components {
   .luxury-gradient {
-    background: linear-gradient(135deg, #d4af37 0%, #c0c0c0 50%, #d4af37 100%);
+    background: linear-gradient(135deg, #b8941f 0%, #c0c0c0 50%, #b8941f 100%);
   }
   
   .car-card-hover {
