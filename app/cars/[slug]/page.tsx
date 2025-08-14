@@ -40,7 +40,7 @@ function CarGallery({ car }: { car: Car }) {
     <div className="space-y-4">
       <div className="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden">
         <img
-          src={`${allImages[0].imgix_url}?w=1200&h=675&fit=crop&auto=format,compress`}
+          src={`${allImages[0]?.imgix_url}?w=1200&h=675&fit=crop&auto=format,compress`}
           alt={car.title}
           className="w-full h-full object-cover"
         />
@@ -50,7 +50,7 @@ function CarGallery({ car }: { car: Car }) {
           {allImages.slice(1, 5).map((image, index) => (
             <div key={index} className="aspect-w-4 aspect-h-3 rounded-lg overflow-hidden">
               <img
-                src={`${image.imgix_url}?w=400&h=300&fit=crop&auto=format,compress`}
+                src={`${image?.imgix_url}?w=400&h=300&fit=crop&auto=format,compress`}
                 alt={`${car.title} - Image ${index + 2}`}
                 className="w-full h-full object-cover hover:scale-105 transition-transform duration-200"
               />
@@ -103,15 +103,15 @@ function DealershipInfo({ car }: { car: Car }) {
         className="block hover:bg-gray-50 rounded-lg p-4 transition-colors border border-gray-200"
       >
         <h4 className="text-lg font-semibold text-indigo-600 mb-2">
-          {dealership.metadata.dealership_name}
+          {dealership.metadata?.dealership_name}
         </h4>
         <p className="text-gray-600 mb-2 whitespace-pre-line">
-          {dealership.metadata.address}
+          {dealership.metadata?.address}
         </p>
         <p className="text-gray-600 mb-1">
-          <span className="font-medium">Phone:</span> {dealership.metadata.phone}
+          <span className="font-medium">Phone:</span> {dealership.metadata?.phone}
         </p>
-        {dealership.metadata.email && (
+        {dealership.metadata?.email && (
           <p className="text-gray-600">
             <span className="font-medium">Email:</span> {dealership.metadata.email}
           </p>
@@ -149,20 +149,22 @@ export default async function CarPage({ params }: CarPageProps) {
             <div>
               <h1 className="text-4xl font-bold text-gray-900 mb-2">{car.title}</h1>
               <div className="flex items-center space-x-4">
-                <Link 
-                  href={`/brands/${car.metadata.brand?.slug}`}
-                  className="text-indigo-600 hover:text-indigo-800 font-medium"
-                >
-                  {car.metadata.brand?.metadata?.brand_name}
-                </Link>
+                {car.metadata.brand && (
+                  <Link 
+                    href={`/brands/${car.metadata.brand.slug}`}
+                    className="text-indigo-600 hover:text-indigo-800 font-medium"
+                  >
+                    {car.metadata.brand.metadata?.brand_name}
+                  </Link>
+                )}
                 <span className={`px-3 py-1 rounded-full text-sm font-medium ${
-                  car.metadata.condition.key === 'new' 
+                  car.metadata.condition?.key === 'new' 
                     ? 'bg-green-100 text-green-800' 
-                    : car.metadata.condition.key === 'certified'
+                    : car.metadata.condition?.key === 'certified'
                     ? 'bg-blue-100 text-blue-800'
                     : 'bg-gray-100 text-gray-800'
                 }`}>
-                  {car.metadata.condition.value}
+                  {car.metadata.condition?.value}
                 </span>
                 <span className={`px-3 py-1 rounded-full text-sm font-medium ${
                   car.metadata.available ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
@@ -173,7 +175,7 @@ export default async function CarPage({ params }: CarPageProps) {
             </div>
             <div className="text-right">
               <div className="text-3xl font-bold text-indigo-600">
-                ${car.metadata.price.toLocaleString()}
+                ${car.metadata.price?.toLocaleString()}
               </div>
             </div>
           </div>
